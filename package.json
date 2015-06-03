@@ -1,0 +1,27 @@
+{
+  "name": "xueqiu_reminder",
+  "version": "1.0.0",
+  "description": "auto reminder you stock change status via email",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wanming/xueqiu_reminder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wanming/xueqiu_reminder/issues"
+  },
+  "homepage": "https://github.com/wanming/xueqiu_reminder",
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "cron": "^1.0.9",
+    "emailjs": "^0.3.16",
+    "lodash": "^3.9.3",
+    "moment": "^2.10.3",
+    "request": "^2.57.0"
+  }
+}
