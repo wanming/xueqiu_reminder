@@ -66,7 +66,7 @@ function processDataAndSendEmail (data, callback) {
         stock_symbol: data.stock_symbol,
         stock_name: data.stock_name,
         html_url: data.html_url,
-        updated_at: moment(item.updated_at).format('YYYY-MM-DD hh:mm:ss'),
+        updated_at: moment(item.updated_at).format('YYYY-MM-DD HH:mm:ss'),
         list: item.rebalancing_histories
       });
 
@@ -160,7 +160,7 @@ function konsole (prefix, style) {
 
   var content = prefix + args.join(' ');
 
-  fs.appendFileSync(logPath, '[' + moment().format('YYYY-MM-DD hh:mm:ss') + '] ' + content + '\n');
+  fs.appendFileSync(logPath, '[' + moment().format('YYYY-MM-DD HH:mm:ss') + '] ' + content + '\n');
 
   console.log.call(null, style ? style(content) : content);
 }
