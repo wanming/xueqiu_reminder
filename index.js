@@ -76,7 +76,7 @@ function processDataAndSendEmail (data, callback) {
         if (err) { fatalErrorHandle(err); }
       });
     } else {
-      log('it has too long ago or has been reminded, ignore it.');
+      // log('it has too long ago or has been reminded, ignore it.');
     }
   });
 }
