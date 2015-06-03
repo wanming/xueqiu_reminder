@@ -31,7 +31,7 @@ try {
 function main () {
 
   var job = new CronJob(
-    '*/30 * 9-16 * * 1-5',
+    '*/30 * 9-14 * * 1-5',
     doJob,
     function () {},
     true,
