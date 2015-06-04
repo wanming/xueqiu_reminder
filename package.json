@@ -22,6 +22,7 @@
     "emailjs": "^0.3.16",
     "lodash": "^3.9.3",
     "moment": "^2.10.3",
+    "moment-timezone": "^0.4.0",
     "request": "^2.57.0"
   }
 }
