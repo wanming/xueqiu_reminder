@@ -1,5 +1,5 @@
 # xueqiu_reminder
-Auto reminder you stock change status via email.
+Auto remind you stock change status via email.
 
 ##HOW TO USE
 copy config.example.js to config.js, modify it as you wish.
