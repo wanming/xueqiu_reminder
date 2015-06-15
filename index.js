@@ -60,7 +60,7 @@ function processDataAndSendEmail (data, callback) {
 
   data.list.forEach(function (item) {
 
-    if (+new Date - item.updated_at < 10 * 60 * 1000 && !visited[item.id]) {
+    if (+new Date - item.updated_at < 60 * 60 * 1000 && !visited[item.id]) {
 
       var title = _.template(settings.template.title)({
         stock_name: data.stock_name + ' ' + formatTime(item.updated_at, 'HH:mm')
@@ -75,11 +75,13 @@ function processDataAndSendEmail (data, callback) {
 
       visited[item.id] = true;
 
+      log('send email', title);
+
       sendEmail(settings.email, title, content, function (err, message) {
         if (err) { fatalErrorHandle(err); }
       });
     } else {
-      // log('it has too long ago or has been reminded, ignore it.');
+      log('ignore');
     }
   });
 }
