@@ -60,7 +60,7 @@ function processDataAndSendEmail (data, callback) {
 
   data.list.forEach(function (item) {
 
-    if (+new Date - item.updated_at < 60 * 60 * 1000 && !visited[item.id]) {
+    if (+new Date - item.updated_at < 360 * 60 * 1000 && !visited[item.id]) {
 
       var title = _.template(settings.template.title)({
         stock_name: data.stock_name + ' ' + formatTime(item.updated_at, 'HH:mm')
@@ -81,7 +81,7 @@ function processDataAndSendEmail (data, callback) {
         if (err) { fatalErrorHandle(err); }
       });
     } else {
-      log('ignore');
+      // log('ignore');
     }
   });
 }
@@ -163,9 +163,9 @@ function konsole (prefix, style) {
 
   var args = slice.call(arguments, 2);
 
-  var content = prefix + args.join(' ');
+  var content = '[' + formatTime(now, 'YYYY-MM-DD HH:mm:ss') + '] ' + prefix + args.join(' ');
 
-  fs.appendFileSync(logPath, '[' + formatTime(now, 'YYYY-MM-DD HH:mm:ss') + '] ' + content + '\n');
+  fs.appendFileSync(logPath, content + '\n');
 
   console.log.call(null, style ? style(content) : content);
 }
